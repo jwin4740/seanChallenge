@@ -1,0 +1,60 @@
+<div id="back">
+    <header id="masthead">
+        <div class="container">
+            <h1>Tree Challenge</h1>
+        </div>
+    </header>
+
+    <div id="mainSection">
+        <header>
+            <h2>
+                Passport Programming Challenge
+            </h2>
+        </header>
+        <section id="lists">
+            <div id="factories">
+                <div id="dynamicFactories">
+                    
+                </div>
+            </div>
+            <br>
+        </section>
+        <div id='new'>
+            <section id="addSection">
+                <div id="addFactory">
+
+                    <form id="newFactory" name="newFactory" method="post" action="/newFactory">
+                        <h3>Create a new Factory</h3>
+                        <label for="facName">Whats this factory called?</label>
+                        <br>
+                        <input class="text" name="facName" type="text" title="Invalid input" />
+                        <br>
+                        <label for="numChildren" id='numChildrenLabel'> How many children would you like? (up to 15)</label>
+                        <br>
+                        <input class="text" name="numChildren" type="text" />
+                        <br>
+                        <label for="upLim" id='upLimLabel'> Whats the highest range of the children? </label>
+                        <br>
+                        <input class="text" name="upLim" type="text" />
+                        <br>
+                        <label for="lowLim" id='lowLimLabel'> Whats the lowest range of the children?</label>
+                        <br>
+                        <input class="text" name="lowLim" type="text" />
+                        <br>
+                        <button class="pure-button" "addFactoryBtn" type="submit">
+
+                            Add A Factory
+                            
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<script src="/js/tree.js" type="text/javascript"></script>

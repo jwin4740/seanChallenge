@@ -1,0 +1,116 @@
+body {
+    background-image: url("../images/background-jpg.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .loginbox {
+    width: 450px;
+    height: 450px;
+    background: grey;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-43%, -35%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    
+  }
+ 
+  .factories {
+    width: 200px;
+    height: 200px;
+    /* border-radius: 50%; */
+    /* position: absolute; */
+    /* top: -50px; */
+    /* left: calc(50% - 50px); */
+  }
+
+  
+h1 {
+    margin: 0;
+    padding: 5px 0 20px;
+    text-align: center;
+    font-size: 26px;
+    color:white;
+    font-weight: bolder;
+  }
+  h2 {
+      font-size: 20px;
+      text-decoration: underline;
+      color: white;
+    }
+
+    .loginbox input[type="text"]
+    {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color:black;
+        font-size: 16px;
+    }
+     .loginbox input[type="submit"]
+     {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #fb2525;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+     }
+
+
+     #addFactory {
+        border: none;
+        background: transparent;
+        color: white;
+        font-weight: bold;
+        padding: 5%;
+      }
+      #addFactory h3 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 30px;
+        color: white;
+        text-align: left;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+      
+      #addFactory input[type="text"] {
+        background-color: #3cbc8d;
+        color: red;
+      }
+    
+     #dynamicFactories {
+        color: rgb(2, 2, 2);
+      }
+      
+      h3
+      {
+          width: 200px;
+          height: 200px;
+          
+      }
+      #dynamicFactories > *{
+        display: inline-block;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #fff;
+        /* width: 200px; */
+        background: grey;
+        padding:15px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        border: 1px solid #000000;
+        max-width: auto;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+     
+    }

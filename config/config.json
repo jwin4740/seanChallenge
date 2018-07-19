@@ -1,0 +1,24 @@
+{
+    "development": {
+      "username": "root",
+      "password": "root",
+      "port": 3306,
+      "database": "ProgChal_db",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "database_test",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "pt62w2fv7dhcr3it",
+      "password": "un9pvpffl57423tw",
+      "database": "kzs4epihmk9tinm2",
+      "host": "tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "dialect": "mysql"
+    }
+  }

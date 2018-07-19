@@ -1,2 +1,1 @@
-# seanChallenge
-jj
+# Programming-Challenge
