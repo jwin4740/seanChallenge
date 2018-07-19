@@ -122,8 +122,8 @@ function getChildList(data) {
 
 
     for (var i = 0; i < data.length; i++) {
-        console.log("child");
-        $('#childList').append(
+
+        $('.childNum').append(
             `<div class ="children" data-id='${data[i].id}'>
             <p class='numValue'>Value: ${data[i].numValue} </p> 
             </br>
@@ -139,85 +139,110 @@ function getFactoryList(data) {
     console.log(data);
     dataRes = data;
     console.log(dataRes);
+    data.forEach((val, n) => {
+        $('#dynamicFactories').append(createFactoryElement(data, n));
+    });
+
+
+    // for (var i = 0; i < data.length; i++) {
+    //     let generatedArr = [];
+    //     let numberOfChildren = data[i].numChildren;
+    //     let lowerBound = data[i].lowLim;
+    //     let upperBound = data[i].upLim;
+
+
+    //     // for (var j = 0; j < numberOfChildren; j++) {
+    //     //     generatedArr.push(randomNum(lowerBound, upperBound));
+
+    //     // }
+    //     // console.log(generatedArr);
 
 
 
-    for (var i = 0; i < data.length; i++) {
-        let generatedArr = [];
-        let numberOfChildren = data[i].numChildren;
-        let lowerBound = data[i].lowLim;
-        let upperBound = data[i].upLim;
-        console.log(numberOfChildren);
 
-        for (var j = 0; j < numberOfChildren; j++) {
-            generatedArr.push(randomNum(lowerBound, upperBound));
 
-        }
-        console.log(generatedArr);
-        
+    //     generatedArr = [];
+
+    // }
 
 
 
-        $('#dynamicFactories').append(
-            `<div class ="madeFactory" data-id='${data[i].id}'>
-            <p class='facName'>Factory Name: ${data[i].facName} </p>
-            <p class='empty1'></p> 
-            <p class='empty2'></p> 
-            </br>
-            <div class='factoryChild'></div>
-            </div>
-        `);
-        generatedArr = [];
+}
 
-    }
-    var updateButton = $("<button>");
+function createFactoryElement(data, n) {
+    let newDiv = $("<div>");
+    newDiv.addClass("madeFactory")
+    let newP1 = $("<p class='empty1'>");
+    let newP2 = $("<p class='empty2'>");
+    newDiv.addClass("madeFactory");
+    newDiv.attr("data-id", data[n].id);
+    newDiv.text(`Factory Name: ${data[n].facName}`);
+
+
+    let updateButton = $("<button>");
     updateButton.text("Update Factory");
-    updateButton.addClass(`changeAmt`)
-    $(".empty1").append(updateButton);
-    var deleteButton = $("<button>");
+    updateButton.addClass("changeAmt");
+    newP1.append(updateButton);
+    let deleteButton = $("<button>");
     deleteButton.text("Delete this Factory");
-    deleteButton.addClass('deleteButton');
-    $('.empty2').append(deleteButton);
+    deleteButton.addClass("deleteButton");
+    newP2.append(deleteButton);
+    newDiv.append(newP1).append(newP2);
+    newDiv.append(addChildrenNumbers(data, n))
 
 
+    return newDiv;
 }
 
-function populateChildren() {
+
+function addChildrenNumbers(data, n) {
+    let childContainer = $("<div class='childContainer'>");
+    
+    let i = data[n].numChildren;
+    while (i > -1){
+        let childNum = $("<div class='childNum'>");
+        childNum.text(randomNum(data[n].lowLim, data[n].upLim));
+        childContainer.append(childNum);
+
+
+        i--;
+    }
+    return childContainer;
+   
 
 }
-
 
 function randomNum(lowerLim, upperLim) {
 
-    return Math.floor(Math.random() * (lowerLim - upperLim)) + lowerLim;
+    return Math.floor(Math.random() * (upperLim - lowerLim)) + lowerLim;
 }
 
 
 // wouldn't recommend validating this way
-function validateForm() {
-    var numChildren = document.forms["newFactory"]["numChildren"].value;
-    var upLim = document.forms["newFactory"]["upLim"].value;
-    var lowLim = document.forms["newFactory"]["lowLim"].value;
-    var stuff = $(".text").val();
-    var reg = new RegExp('^[a-zA-Z0-9_]*$');
-    if (numChildren == "" || isNaN(numChildren || numChildren > 15)) {
-        $("#numChildrenLabel").append("<br>Must be filled out and must be a number less than 15")
-        return false;
-    }
-    if (upLim == "" || upLim < lowLim) {
-        $("#upLimLabel").append("<br>Must be a number");
-        return false;
-    }
+// function validateForm() {
+//     var numChildren = document.forms["newFactory"]["numChildren"].value;
+//     var upLim = document.forms["newFactory"]["upLim"].value;
+//     var lowLim = document.forms["newFactory"]["lowLim"].value;
+//     var stuff = $(".text").val();
+//     var reg = new RegExp('^[a-zA-Z0-9_]*$');
+//     if (numChildren == "" || isNaN(numChildren || numChildren > 15)) {
+//         $("#numChildrenLabel").append("<br>Must be filled out and must be a number less than 15")
+//         return false;
+//     }
+//     if (upLim == "" || upLim < lowLim) {
+//         $("#upLimLabel").append("<br>Must be a number");
+//         return false;
+//     }
 
-    if (lowLim == "" && lowLim > upLim) {
-        $("#lowLimLabel").append("<br>Must be a number");
-        return false;
-    }
+//     if (lowLim == "" && lowLim > upLim) {
+//         $("#lowLimLabel").append("<br>Must be a number");
+//         return false;
+//     }
 
-    if (reg.test(stuff)) {
-        $("#newFactory").prepend("Must not contain any special characters <br>")
-        return false;
-    }
+//     if (reg.test(stuff)) {
+//         $("#newFactory").prepend("Must not contain any special characters <br>")
+//         return false;
+//     }
 
 
-}
+// }
