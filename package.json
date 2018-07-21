@@ -4,22 +4,12 @@
   "description": "Programming Challenge for Passport",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sgerbich/Programming-Challenge.git"
   },
   "keywords": [
     "Challenge"
   ],
-  "author": "Sean Gerbich",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sgerbich/Programming-Challenge/issues"
-  },
-  "homepage": "https://github.com/sgerbich/Programming-Challenge#readme",
   "dependencies": {
     "commander": "^2.16.0",
     "connect-flash": "^0.1.1",
