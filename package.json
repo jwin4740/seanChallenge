@@ -2,7 +2,7 @@
   "name": "programming-challenge",
   "version": "1.0.0",
   "description": "Programming Challenge for Passport",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },

@@ -6,7 +6,7 @@ var flash = require("connect-flash");
 
 var session = require('express-session');
 var bodyParser = require('body-parser');
-var env = require('dotenv').load();
+
 var exphbs = require('express-handlebars');
 // var force = (process.argv[2] || "false") == "true";
 var program = require('commander');
@@ -20,7 +20,7 @@ program
 
 
 //ports
-var PORT = process.env.port || 5000;
+var PORT = process.env.PORT || 5000;
 
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
